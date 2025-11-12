@@ -42,7 +42,9 @@ const Navbar = () => {
 
   return (
     <div>
-      <header>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition duration-300 ease-in-out text-white`}
+      >
         <nav className="max-w-screen-2xl container mx-auto flex justify-between items-center py-6 px-4">
           {/* LOGO */}
 
@@ -62,11 +64,11 @@ const Navbar = () => {
           <div className="hidden md:flex">
             <NavItems />
           </div>
-          
 
           {/* Mobile Menu */}
           <div
-            className={`fixed top-0 left-0 w-full h-screen bg-black bg-opacity-80 flex flex-col items-center justify-center space-y-8 text-white transition-transform transform ${ isMenuOpen ? "translate-x-0" : "-translate-x-full"
+            className={`fixed top-0 left-0 w-full h-screen bg-black bg-opacity-80 flex flex-col items-center justify-center space-y-8 text-white transition-transform transform ${
+              isMenuOpen ? "translate-x-0" : "-translate-x-full"
             } md:hidden`}
           >
             <div
