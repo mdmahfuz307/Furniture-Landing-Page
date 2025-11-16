@@ -1,12 +1,10 @@
-import { useContext, useState } from "react";
-import { products } from "../../utils/products";
+import { useState } from "react";
+import { products } from "../../utility/products";
 
 import btnIcon from "../../assets/button-icon.png";
-import { ThemeContext } from "../../context/ThemeContext";
 import ProductCard from "./ProductCard";
 
 const Products = ({ headline }) => {
-  const { isDarkMode, toggleTheme } = useContext(ThemeContext);
 
   const categories = ["Chair", "Beds", "Sofa", "Lamp"];
 
@@ -18,16 +16,13 @@ const Products = ({ headline }) => {
     (product) => product.category === selectedCategory
   );
 
-  console.log(filteredProducts);
+
 
   const loadMoreProducts = () => {
     setVisibleProducts((prev) => prev + 4);
   };
 
   return (
-    <div
-      className={`${isDarkMode ? "bg-gray-900 text-white" : "bg-secondary-bg"}`}
-    >
       <div className="section-container">
         {/* Headline */}
         <h2 className="text-4xl font-bold text-center my-8 ">{headline}</h2>
@@ -74,7 +69,6 @@ const Products = ({ headline }) => {
           </div>
         )}
       </div>
-    </div>
   );
 };
 

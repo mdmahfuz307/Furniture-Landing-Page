@@ -2,7 +2,10 @@ import React from 'react';
 import { FaStar } from "react-icons/fa6";
 import { IoStarOutline } from "react-icons/io5";
 
-const Rating = () => {
+
+const Rating = (rating) => {
+    const totalStars = 5;
+
     return (
       <div className="flex space-x-1">
         {Array.from({ length: totalStars }, (_, index) => {
